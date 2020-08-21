@@ -6,5 +6,4 @@ print(lorem_tab)
 for mot in lorem_tab:
     if mot == "elit":
         compteur += 1
-
 print(compteur)
