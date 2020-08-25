@@ -1,14 +1,22 @@
 def join(*arg):
     separator = arg[0]
-    listx = list(arg)
-    listx.remove(separator)
-    arg = tuple(listx)
     res = ""
-    for a in arg:
-        if not arg[len(arg)-1] == a :
-            res +=  a + separator
-        else:
-            res += a
-    return res
+    for a in arg[1:]:
+        res +=  a + separator
+    return res[:-1]
+j = join(":", "Bonjour", "tout", "le", "monde")
+print(j)
+
+def join(*args):
+    resultat = ""
+
+    separateur = args[0]
+    elements = args[1:]
+    for element in elements:
+        resultat += element + separateur
+
+    print(resultat)
+    return resultat[:-1]
+
 j = join(":", "Bonjour", "tout", "le", "monde")
 print(j)
