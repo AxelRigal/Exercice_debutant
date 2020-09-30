@@ -1,3 +1,4 @@
+
 etudiants_partis = []
 
 
@@ -6,9 +7,13 @@ class Etudiant:
         self.prenom = prenom
         self.nom = nom
 
+    def __del__(self):
+        etudiants_partis('{} {}'.format(self.prenom, self.nom))
+
 
 john = Etudiant("John", "Smith")
 julie = Etudiant("Julie", "Martin")
 marc = Etudiant("Marc", "Tremblay")
-
+etudiants_partis.append(marc.prenom + " " + marc.nom)
 del marc
+print(etudiants_partis)
