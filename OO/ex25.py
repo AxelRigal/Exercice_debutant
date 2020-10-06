@@ -5,15 +5,17 @@ class Email:
         self.is_sent = False
 
     def send_to(self, email):
-        self.number_of_mails_sent += 1
         if self.is_sent is False:
-            pass
-        else:
-            return "OK"
-
-
+            self.is_sent = True
+            Email.number_of_mails_sent += 1
+            return "E-mail envoyé"
+        elif self.is_sent is True:
+            return "L'e-mail a déjà été envoyé"
 
 
 email = Email(content="La nouvelle formation est disponible !")
 response_01 = email.send_to(email="JohnSmith@gmail.com")
 response_02 = email.send_to(email="JohnSmith@gmail.com")
+print(response_01)
+print(response_02)
+print(email.number_of_mails_sent)
